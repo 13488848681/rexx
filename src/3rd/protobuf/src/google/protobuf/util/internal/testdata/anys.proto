@@ -1,0 +1,23 @@
+
+syntax = "proto3";
+
+package google.protobuf.testing.anys;
+option java_package = "com.google.protobuf.testing.anys";
+
+import "google/protobuf/any.proto";
+
+message AnyIn {
+  string something = 1;
+}
+
+message AnyOut {
+  google.protobuf.Any any = 1;
+}
+
+message AnyM {
+  string foo = 1;
+}
+
+service TestService {
+  rpc Call(AnyIn) returns (AnyOut);
+}

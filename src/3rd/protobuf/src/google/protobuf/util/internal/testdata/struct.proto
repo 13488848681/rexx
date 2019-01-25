@@ -1,0 +1,15 @@
+
+syntax = "proto3";
+
+package google.protobuf.testing.structs;
+option java_package = "com.google.protobuf.testing.structs";
+
+import "google/protobuf/struct.proto";
+
+message StructType {
+  google.protobuf.Struct object = 1;
+}
+
+service TestService {
+  rpc Call(StructType) returns (StructType);
+}

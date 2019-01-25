@@ -1,0 +1,8 @@
+
+#ifndef HEADER_GOST_ERR_H
+#define HEADER_GOST_ERR_H
+
+#define GOST_LIB_NAME "GOST engine"
+#ifdef __cplusplus
+ extern "C" {
+#endif

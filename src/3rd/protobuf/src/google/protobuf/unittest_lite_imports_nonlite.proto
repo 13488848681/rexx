@@ -1,0 +1,11 @@
+
+syntax = "proto2";
+package protobuf_unittest;
+
+import "google/protobuf/unittest.proto";
+
+option optimize_for = LITE_RUNTIME;
+
+message TestLiteImportsNonlite {
+  optional TestAllTypes message = 1;
+}

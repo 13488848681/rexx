@@ -1,0 +1,38 @@
+
+syntax = "proto3";
+
+import "google/protobuf/any.proto";
+import "google/protobuf/struct.proto";
+import "google/protobuf/timestamp.proto";
+
+package google.protobuf.testing.oneofs;
+option java_package = "com.google.protobuf.testing.oneofs";
+
+message OneOfsRequest {
+  string value = 1;
+  oneof data {
+    string str_data = 2;
+    int32 int_data = 3;
+    // Simple message
+    Data message_data = 4;
+    // Well known types
+    google.protobuf.Struct struct_data = 5;
+    google.protobuf.Value value_data = 6;
+    google.protobuf.ListValue list_value_data = 7;
+    google.protobuf.Timestamp ts_data = 8;
+  }
+  google.protobuf.Any any_data = 19;
+}
+
+message Data {
+  int32 data_value = 1;
+}
+
+message Response {
+  string value = 1;
+}
+
+service TestService {
+  // Test call.
+  rpc Call(OneOfsRequest) returns (Response);
+}

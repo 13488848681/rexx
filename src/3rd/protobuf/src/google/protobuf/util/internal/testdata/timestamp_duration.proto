@@ -1,0 +1,17 @@
+
+syntax = "proto3";
+
+package google.protobuf.testing.timestampduration;
+option java_package = "com.google.protobuf.testing.timestampduration";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/duration.proto";
+
+message TimestampDuration {
+  google.protobuf.Timestamp ts = 1;
+  google.protobuf.Duration dur = 2;
+}
+
+service TestService {
+  rpc Call(TimestampDuration) returns (TimestampDuration);
+}

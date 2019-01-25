@@ -1,0 +1,42 @@
+
+#pragma once
+#include "rocksdb/iostats_context.h"
+
+#ifndef IOS_CROSS_COMPILE
+
+// increment a specific counter by the specified value
+#define IOSTATS_ADD(metric, value)     \
+  (iostats_context.metric += value)
+
+// Increase metric value only when it is positive
+#define IOSTATS_ADD_IF_POSITIVE(metric, value)   \
+  if (value > 0) { IOSTATS_ADD(metric, value); }
+
+// reset a specific counter to zero
+#define IOSTATS_RESET(metric)          \
+  (iostats_context.metric = 0)
+
+// reset all counters to zero
+#define IOSTATS_RESET_ALL()                        \
+  (iostats_context.Reset())
+
+#define IOSTATS_SET_THREAD_POOL_ID(value)      \
+  (iostats_context.thread_pool_id = value)
+
+#define IOSTATS_THREAD_POOL_ID()               \
+  (iostats_context.thread_pool_id)
+
+#define IOSTATS(metric)                        \
+  (iostats_context.metric)
+
+#else  // IOS_CROSS_COMPILE
+
+#define IOSTATS_ADD(metric, value)
+#define IOSTATS_ADD_IF_POSITIVE(metric, value)
+#define IOSTATS_RESET(metric)
+#define IOSTATS_RESET_ALL()
+#define IOSTATS_SET_THREAD_POOL_ID(value)
+#define IOSTATS_THREAD_POOL_ID()
+#define IOSTATS(metric) 0
+
+#endif  // IOS_CROSS_COMPILE
