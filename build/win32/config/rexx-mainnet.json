@@ -1,0 +1,67 @@
+{
+	"db": {
+		"account_path": "data/account.db",
+		"ledger_path": "data/ledger.db",
+		"keyvalue_path": "data/keyvalue.db"
+	},
+
+	"p2p": {
+		"network_id": 10000,
+		"consensus_network": {
+			"heartbeat_interval": 60,
+			"listen_port": 17001,
+			"target_peer_connection": 10,
+			"known_peers": [
+				"seed1.rexx.io:17001",
+				"seed2.rexx.io:17001",
+				"seed3.rexx.io:17001",
+				"seed4.rexx.io:17001",
+				"seed5.rexx.io:17001",
+				"seed6.rexx.io:17001",
+				"seed7.rexx.io:17001"
+			]
+		}
+	},
+	"webserver": {
+		"listen_addresses": "127.0.0.1:17002"
+	},
+	"wsserver": {
+		"listen_address": "127.0.0.1:17003"
+	},
+	"ledger": {
+		"max_trans_per_ledger": 10000,
+		"hardfork_points": [],
+		"tx_pool":{
+            "queue_limit":10240,
+            "queue_per_account_txs_limit":64
+        }
+	},
+	"genesis" :{
+		"account" : "RexxhrwzAVKvC34PEZkYqzbagfHobBR46ytEi3C",
+		"slogan" : "Welcome to the world of Rexx Blockchain!",
+		"fees": {"base_reserve":10000000, "gas_price" :1000},
+		"validators": [
+			"RexxhrxkLEmnjvyyTnFy4Yx3bPQuCxRXXz4J3vS",
+			"RexxhrhQS46Wq4kGqpVFWXgqt5hGKt7oXms6ZaJ",
+			"Rexxhrj9QhKyX3GTeZmCYjhhWtyfGVuFvZfb9LZ",
+			"RexxhriDHVoEUy2fzT7qowdKzWrKRP78TrkWogM",
+			"RexxhrpJgqBB8epYtuMfScHhQsvzQAviWdTybWi",
+			"Rexxhs5pdFHDBzbtYpSZ4KAgQtEfqPjrnbiYM4n",
+			"RexxhrxaWwK5HyZSSEEa78pG6tBZWfqFpGutvrZ",
+			"Rexxhrxc5DJ79Ns7G6k14msvgvk69YH8SkfWD96",
+			"RexxhroSFy7UK3Pqh1PppKRTnbJsSya8DRUXEBr",
+			"RexxhrrNgWt3x84YgkoFr3E2eFwkminzTR6DXNf",
+			"Rexxhs1Y4A8Re5kqv1X23Derg2m5cn5cmybivyb",
+			"RexxhrpaQy3Q8xaUdTfMMjVMPyn9GxfZkvt3bsk",
+			"Rexxhrw4L8NPLnriA7BtA4btEGYKPpb7q7NohvJ"
+		]
+	},
+	"logger": {
+		"path": "log/rexx.log",
+		"dest": "FILE|STDOUT|STDERR",
+		"level": "INFO|WARNING|ERROR|FATAL",
+		"time_capacity": 1,
+		"size_capacity": 10,
+		"expire_days": 10
+	}
+}

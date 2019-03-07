@@ -1,0 +1,51 @@
+{
+	"db": {
+		"account_path": "data/account.db",
+		"ledger_path": "data/ledger.db",
+		"keyvalue_path": "data/keyvalue.db"
+	},
+	"p2p": {
+		"network_id": 20000,
+		"consensus_network": {
+			"heartbeat_interval": 60,
+			"listen_port": 27001,
+			"target_peer_connection": 10,
+			"known_peers": ["seed1.rexxtest.io:26001","seed2.rexxtest.io:26001","seed3.rexxtest.io:26001","seed4.rexxtest.io:26001"]
+		}
+	},
+	"webserver": {
+		"listen_addresses": "127.0.0.1:27002"
+	},
+	"wsserver": {
+		"listen_address": "127.0.0.1:27003"
+	},
+	"ledger": {
+		"max_trans_per_ledger": 10000,
+		"hardfork_points": [],
+		"tx_pool":{
+            	"queue_limit":10240,
+            	"queue_per_account_txs_limit":64
+        }
+	},
+	"genesis" :{
+		"account" : "Rexxhrw4L8NPLnriA7BtA4btEGYKPpb7q7NohvJ",
+		"fees": {"base_reserve":10000000, "gas_price" :1000},
+		"validators": [
+			"RexxhrtzyTvm57cgRBBEnAc8RQZ5Saj6sdfTECa",
+			"RexxhrsorTmdAxHNmHzht4WLT3tP3Gf96UJGev8",
+			"Rexxhs43XZKijgvZKs8zNoxoZp5wak1TiFNo3ri",
+			"RexxhrpCT9ipETMrENVYLsQnxjJHMHa3oUPWcSX",
+			"RexxhriUvY2Q1DFFGVFAgkzNni8fRkAkGxLqgQQ",
+			"RexxhrpduStGsSH1jK9rZMHFX6oz6g5pHNAsUre",
+			"Rexxhrno3G6AV8XrWdhBa6BjXSMjbEFMnZcNCoV"
+		]
+	},
+	"logger": {
+		"path": "log/rexx.log",
+		"dest": "FILE|STDOUT|STDERR",
+		"level": "INFO|WARNING|ERROR|FATAL",
+		"time_capacity": 1,
+		"size_capacity": 10,
+		"expire_days": 10
+	}
+}

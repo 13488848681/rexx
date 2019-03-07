@@ -1,0 +1,46 @@
+{
+    "db": {
+        "account_path": "data/account.db",
+        "ledger_path": "data/ledger.db",
+        "keyvalue_path": "data/keyvalue.db"
+    },
+    "p2p": {
+        "network_id": 30000,
+        "consensus_network": {
+            "heartbeat_interval": 60,
+            "listen_port": 37001,
+            "target_peer_connection": 50,
+            "known_peers": ["rexx.chinacloudapp.cn:37001"]
+        }
+    },
+    "webserver": {
+        "listen_addresses": "0.0.0.0:37002"
+    },
+    "wsserver": {
+        "listen_address": "0.0.0.0:37003"
+    },
+    "ledger": {
+        "max_trans_per_ledger": 10000,
+        "hardfork_points": [],
+        "tx_pool":{
+            "queue_limit":10240,
+            "queue_per_account_txs_limit":64
+        }
+    },
+    "genesis": {
+        "account": "Rexxhrno3G6AV8XrWdhBa6BjXSMjbEFMnZcNCoV",
+        "fees": {
+            "base_reserve": 10000000,
+            "gas_price": 1000
+        },
+        "validators": ["Rexxhrjt8JhvfKyM755A2Xk5oFCmLxg8WmjJNEF", "RexxhrpMrw2EcCXpaVNSjt9gAdjVfbYfWidES8Y", "Rexxhrvp63y7ZB6LFxaSrYHpUo1cFqjdjrKMySb", "Rexxhs2gLVC4ywW9aRb4L4M4X1odJbUrtSKBtj2"]
+    },
+    "logger": {
+        "path": "log/rexx.log",
+        "dest": "FILE|STDOUT|STDERR",
+        "level": "INFO|WARNING|ERROR|FATAL",
+        "time_capacity": 1,
+        "size_capacity": 10,
+        "expire_days": 10
+    }
+}
