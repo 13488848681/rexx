@@ -33,7 +33,7 @@ Execute the following commands separately.
 ### Cloning the repository (10 minutes)
 
 ```
-git clone https://gitee.com/rexxchain/rexx.git
+git clone https://github.com/RexxChain/rexx.git
 ```
 
 
